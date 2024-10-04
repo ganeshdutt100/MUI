@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+
+<style>
+    body {
+  background-color: hsl(218, 41%, 15%);
+  background-image: radial-gradient(
+    650px circle at 0% 0%,
+    hsl(218, 41%, 35%) 15%,
+    hsl(218, 41%, 30%) 35%,
+    hsl(218, 41%, 20%) 75%,
+    hsl(218, 41%, 19%) 80%,
+    transparent 100%
+  ),
+    radial-gradient(
+      1250px circle at 100% 100%,
+      hsl(218, 41%, 45%) 15%,
+      hsl(218, 41%, 30%) 35%,
+      hsl(218, 41%, 20%) 75%,
+      hsl(218, 41%, 19%) 80%,
+      transparent 100%
+    );
+}
+#card-custom {
+  width: 350px;
+  height: 500px;
+  background: hsla(0, 0%, 100%, 0.15);
+  backdrop-filter: blur(30px);
+}
+
+#shape-1 {
+  height: 220px;
+  width: 220px;
+  bottom: -100px;
+  left: -90px;
+  background: radial-gradient(#44006b, #ad1fff);
+  z-index: -10;
+}
+#shape-2 {
+  border-radius: 38% 62% 63% 37% / 70% 33% 67% 30%;
+  top: -100px;
+  right: 10px;
+  width: 300px;
+  height: 300px;
+  background: radial-gradient(#44006b, #ad1fff);
+  z-index: -10;
+}
+#chip {
+  width: 50px;
+}
+
+.fade {
+  animation-duration: 1s;
+  animation-fill-mode: both;
+  padding: auto;
+  animation-name: fade-in;
+}
+
+.fade-delay-small {
+  animation-delay: 0.15s;
+}
+
+.fade-delay-medium {
+  animation-delay: 0.3s;
+}
+.fade-delay-big {
+  animation-delay: 0.4s;
+}
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+</style>
+</head>
+<body>
+    <div class="container vh-100">
+        <div class="row gx-lg-5 h-100 d-flex align-content-center text-white">
+          <div class="col-md-6 mb-4 mb-md-0 d-flex align-items-center">
+            <div class="animation-delay fade">
+              <h1 class="mb-4 opacity-90" style="color: hsl(218, 81%, 95%)">
+                Exclusive offer
+              </h1>
+      
+              <h5 class="mb-4 opacity-80" style="color: hsl(218, 81%, 90%)">
+                Lorem ipsum dolor sit amet consectetur.
+              </h5>
+      
+              <p class="mb-4 opacity-70" style="color: hsl(218, 81%, 85%)">
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                Temporibus, expedita iusto veniam atque, magni tempora mollitia
+                dolorum consequatur nulla, neque debitis eos reprehenderit quasi
+                ab ipsum nisi dolorem modi. Quos?
+              </p>
+      
+              <a
+                 class="btn btn-light btn-lg rounded-pill me-3 opacity-80"
+                 href="#"
+                 role="button"
+                 >Buy now</a
+                >
+              <a
+                 class="btn btn-outline-light btn-lg rounded-pill opacity-80"
+                 href="#"
+                 role="button"
+                 >Learn more</a
+                >
+            </div>
+          </div>
+      
+          <div class="col-md-5 offset-md-1 mb-4 mb-md-0 position-relative">
+            <div
+                 id="shape-1"
+                 class="
+                        position-absolute
+                        rounded-circle
+                        shadow-5-strong
+                        fade fade-delay-small
+                        "
+                 ></div>
+            <div
+                 id="shape-2"
+                 class="position-absolute shadow-5-strong fade fade-delay-medium"
+                 ></div>
+            <div
+                 id="card-custom"
+                 class="card shadow-lg rounded-4 fade fade-delay-big"
+                 >
+              <div class="card-body p-5 opacity-90 ls-widest">
+                <h2>
+                  <strong>Platinum</strong> <span class="fw-light">card</span>
+                </h2>
+              </div>
+              <div
+                   class="card-footer px-5 border-0 opacity-90 ls-widest fw-light"
+                   >
+                <img
+                     id="chip"
+                     class="mb-5"
+                     src="/api/placeholder/50/50"
+                     alt="chip"
+                     />
+                <h5 class="mb-5">1234 5678 9012 3456</h5>
+                <p class="mb-2">John Doe</p>
+                <p class="mb-5">12/25</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.7.2/vanilla-tilt.min.js"></script>
+      <script>
+        VanillaTilt.init(document.querySelector("#card-custom"), {
+  startX: 45,
+  startY: 45,
+  reset: false,
+});
+
+//It also supports NodeList
+VanillaTilt.init(document.querySelectorAll("#card-custom"));
+      </script>
+</body>
+</html>
