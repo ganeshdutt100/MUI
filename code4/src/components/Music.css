@@ -1,0 +1,10 @@
+.card{
+    width: 400px;
+    /* height: 300px; */
+    background-color: lightblue;
+    display: flex;
+}
+.card img{
+    width: 50%;
+    height: 50%;
+}
